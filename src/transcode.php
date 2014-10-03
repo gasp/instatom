@@ -53,5 +53,3 @@ class Transcode {
 		return $results;
 	}
 }
-
-return $app;
