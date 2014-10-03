@@ -12,7 +12,7 @@
   <updated>{{ 'now'|date("Y-m-d") }}T{{ 'now'|date("H:i:s") }}Z</updated>
   <generator uri="http://instatom.freelancis.net/">instatom</generator>
 
-{% for pic in user %}
+{% for pic in feed %}
 <entry>
   <title>{{ pic.caption }}</title>
   <link rel="alternate" type="text/html" href="{{ pic.link }}"/>

@@ -1,4 +1,17 @@
 {
+    "name": "gasp/instatom",
+    "description": "Gets instagram JSON feeds and translate them into atom",
+    "version": "0.1.0",
+    "type": "utilitary",
+    "keywords": ["instagram", "atom", "json", "standalone", "tool", "feeds"],
+    "homepage": "http://github.com/gasp/instatom",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "gasp",
+            "homepage": "http://github.com/gasp",
+        }
+    ],
     "require": {
         "silex/silex": "1.2.*",
         "twig/twig": ">=1.8,<2.0-dev"

@@ -13,10 +13,14 @@ $app->register(new Instatom\TranscodeServiceProvider(), array(
 	'transcode.default_name' => 'Gas',
 ));
 
-$app->get('/u/{user}', function ($user) use ($app) {
-	$instagram = $app['transcode']($user);
-	return $app['twig']->render('atom.twig', array(
-		'user' => $instagram->get(),
+$app->get('/', function () use ($app) {
+	return $app['twig']->render('home.html.twig', array());
+});
+
+$app->get('/{user}', function ($user) use ($app) {
+	$feed = $app['transcode']($user);
+	return $app['twig']->render('atom.xml.twig', array(
+		'feed' => $feed->get(),
 	));
 });
 
