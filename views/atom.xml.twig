@@ -3,11 +3,11 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/"
       xmlns:media="http://search.yahoo.com/mrss/">
 
-  <title>Pictures from instagram @ </title>
-  <link rel="self" href="http://est.freelancis.net/instatom/atom.php" />
-  <link rel="alternate" type="text/html" href="http://www.flickr.com/photos/est_creativity/"/>
-  <id>tag:flickr.com,2005:/photos/public/97231683</id>
-  <icon>http://farm8.staticflickr.com/7389/buddyicons/97253013@N07.jpg?1370876161#97253013@N07</icon>
+  <title>Pictures from instagram @{{ feed[0].username }}</title>
+  <link rel="self" href="http://instatom.freelancis.net/" />
+  <link rel="alternate" type="text/html" href="http://instagram.com/{{ feed[0].username }}"/>
+  <id>tag:instatom:/{{ feed[0].username }}</id>
+  <icon>{{ feed[0].thumbnail_url }}</icon>
   <subtitle></subtitle>
   <updated>{{ 'now'|date("Y-m-d") }}T{{ 'now'|date("H:i:s") }}Z</updated>
   <generator uri="http://instatom.freelancis.net/">instatom</generator>
