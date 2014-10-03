@@ -1,5 +1,26 @@
 <?php
 namespace Instatom;
+
+use Silex\Application;
+use Silex\ServiceProviderInterface;
+
+class TranscodeServiceProvider implements ServiceProviderInterface
+{
+	public function register(Application $app)
+	{
+		$app['transcode'] = $app->protect(function ($name) use ($app) {
+			$default = $app['transcode.default_name'] ? $app['transcode.default_name'] : '';
+			$name = $name ?: $default;
+
+			return new Transcode($app->escape($name));
+		});
+	}
+
+	public function boot(Application $app)
+	{
+	}
+}
+
 /**
 * Transcode JSON to Atom
 * construct with new Transcode($username);
@@ -32,3 +53,5 @@ class Transcode {
 		return $results;
 	}
 }
+
+return $app;
