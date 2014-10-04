@@ -38,16 +38,29 @@ class Transcode {
 	 * @author gaspard
 	 */
 	public function get() {
-		$json = json_decode( file_get_contents( "http://instagram.com/{$this->username}/media" ) );
+		$empty = array(array(
+			'link' => '',
+			'created_time' => '',
+			'thumbnail_url' => '',
+			'caption' => '',
+			'username' => '',
+			'full_name' => '',
+		));
+		$media = file_get_contents("http://instagram.com/{$this->username}/media");
+		if(strlen($media) < 1) return $empty;
+
+		$json = json_decode($media);
+		if(!isset($json->items) || count($json->items) == 0) return $empty;
+
 		$results = array();
 		foreach( $json->items as $item ) {
 			$results[] = array(
-				"link" => $item->link,
-				"created_time" => $item->created_time,
-				"thumbnail_url" => $item->images->thumbnail->url,
-				"caption" => isset( $item->caption->text ) ? $item->caption->text : '',
-				"username" => $item->user->username,
-				"full_name" => $item->user->full_name,
+				'link' => $item->link,
+				'created_time' => $item->created_time,
+				'thumbnail_url' => $item->images->thumbnail->url,
+				'caption' => isset( $item->caption->text ) ? $item->caption->text : '',
+				'username' => $item->user->username,
+				'full_name' => $item->user->full_name,
 			);
 		}
 		return $results;
