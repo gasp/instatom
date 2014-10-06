@@ -9,7 +9,7 @@
     "authors": [
         {
             "name": "gasp",
-            "homepage": "http://github.com/gasp",
+            "homepage": "http://github.com/gasp"
         }
     ],
     "require": {
