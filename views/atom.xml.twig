@@ -19,7 +19,7 @@
   <id>tag:instagram.com,{{ pic.created_time }}</id>
   <published>{{ pic.created_time|date("Y-m-d") }}T{{ pic.created_time|date("H:i:s")}}Z</published>
   <updated>{{ pic.created_time|date("Y-m-d") }}T{{ pic.created_time|date("H:i:s")}}Z</updated>
-  <content type="image">&lt;img src=&quot;{{ pic.thumbnail_url }}&quot; width=&quot;150&quot; height=&quot;150&quot; alt=&quot;{{ pic.caption }}&quot; /&gt; {{ pic.caption }}</content>
+  <content type="image">&lt;img src=&quot;{{ pic.thumbnail_url }}&quot; width=&quot;640&quot; height=&quot;640&quot; alt=&quot;{{ pic.caption }}&quot; /&gt; {{ pic.caption }}</content>
   <author>
     <name>{{ pic.full_name }}</name>
     <uri>http://instagram.com/{{ pic.username }}</uri>
