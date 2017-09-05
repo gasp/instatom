@@ -57,7 +57,7 @@ class Transcode {
 			$results[] = array(
 				'link' => $item->link,
 				'created_time' => $item->created_time,
-				'thumbnail_url' => $item->images->thumbnail->url,
+				'thumbnail_url' => $item->images->standard_resolution->url,
 				'caption' => isset( $item->caption->text ) ? $item->caption->text : '',
 				'username' => $item->user->username,
 				'full_name' => $item->user->full_name,
