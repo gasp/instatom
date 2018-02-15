@@ -1,7 +1,7 @@
 # Instatom
 
 Convert instagram JSON feeds to atom feeds
-try it on [http://instatom.freelancis.net](http://instatom.freelancis.net)
+try it on [http://instatomphp.freelancis.net](http://instatom.freelancis.net)
 
 
 This script is written in PHP, based on Silex and Twig.
